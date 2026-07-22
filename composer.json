@@ -1,0 +1,29 @@
+{
+    "name": "spurs-cloud/admin-sdk",
+    "description": "Read configuration and credentials from the Spurs Cloud admin control plane instead of .env.",
+    "type": "library",
+    "license": "proprietary",
+    "keywords": ["spurs", "spurs-cloud", "admin", "config", "laravel"],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpursCloud\\Admin\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SpursCloud\\Admin\\AdminSdkServiceProvider"
+            ],
+            "aliases": {
+                "SpursAdmin": "SpursCloud\\Admin\\Facades\\SpursAdmin"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
